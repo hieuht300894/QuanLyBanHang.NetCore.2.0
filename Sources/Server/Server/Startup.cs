@@ -44,7 +44,7 @@ namespace Server
             ModuleHelper.HostingEnvironment = env;
             ModuleHelper.ServiceScope= app.ApplicationServices.CreateScope();
 
-            DBInitializer.InitData();
+            //DBInitializer.InitData();
 
             app.UseStaticFiles();
             app.UseMvc();
