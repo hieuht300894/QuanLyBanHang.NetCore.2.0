@@ -41,6 +41,9 @@ namespace EntityModel.DataModel
         public decimal TongTien { get; set; }
 
         public string GhiChu { get; set; }
+
+        [NotMapped]
+        public ICollection<eNhapHangNhaCungCapChiTiet> eNhapHangNhaCungCapChiTiet { get; set; } = new HashSet<eNhapHangNhaCungCapChiTiet>();
     }
 
    
