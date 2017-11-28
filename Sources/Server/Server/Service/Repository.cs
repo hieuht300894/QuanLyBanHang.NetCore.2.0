@@ -16,50 +16,58 @@ namespace Server.Service
             this.Context = db;
         }
 
-        public bool Delete(int id)
+        public async Task<IEnumerable<T>> GetAll()
         {
-            try
-            {
-                T item = Context.Set<T>().Find(id);
-                if (item == null) return false;
-                Context.Set<T>().Remove(item);
-                Context.SaveChanges();
-                return true;
+            try {
+                Context = new zModel();
+                Task<List<T>> lstResult = Context.Set<T>().ToListAsync();
             }
-            catch { return false; }
-        }
-
-        public T Detail(int id)
-        {
-            try { return Context.Set<T>().Find(id); }
-            catch { return null; }
-        }
-
-        public IEnumerable<T> GetAll()
-        {
-            try { return Context.Set<T>().AsEnumerable<T>(); }
             catch { return new List<T>(); }
         }
 
-        public T Insert(T item)
+        public Task<T> Detail(object id)
         {
-            try
-            {
-                Context.Set<T>().Add(item);
-                Context.SaveChanges();
-                Context.Entry(item).Reload();
-                return item;
-            }
-            catch { return null; }
+            throw new NotImplementedException();
         }
 
-        public T Update(T item)
+        public Task<bool> AddEntry(T item)
         {
-            try
-            {
-                return item;
-            }
-            catch { return null; }
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> AddEntries(T[] items)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> UpdateEntry(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> UpdateEntries(T[] items)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteEntry(object id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteEntry(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteEntries(object[] ids)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteEntries(T[] items)
+        {
+            throw new NotImplementedException();
         }
     }
 

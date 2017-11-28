@@ -7,11 +7,17 @@ namespace Server.Service
 {
     public interface IRepository<T> where T : class, new()
     {
-        IEnumerable<T> GetAll();
-        T Detail(int id);
-        T Insert(T item);
-        T Update(T item);
-        bool Delete(int id);
+        Task<IEnumerable<T>> GetAll();
+        Task<T> Detail(object id);
+        Task<bool> AddEntry(T item);
+        Task<bool> AddEntries(T[] items);
+        Task<bool> UpdateEntry(T item);
+        Task<bool> UpdateEntries(T[] items);
+        Task<bool> DeleteEntry(object id);
+        Task<bool> DeleteEntry(T item);
+        Task<bool> DeleteEntries(object[] ids);
+        Task<bool> DeleteEntries(T[] items);
+
     }
     public interface IRepositoryCollection
     {
