@@ -18,5 +18,47 @@ namespace Server.Controllers
         {
             Instance = Collection.GetRepository<T>();
         }
+
+        [HttpGet("GetByID/{id}")]
+        public async Task<IActionResult> GetByID(String id)
+        {
+            T Item = await Instance.GetByID(id);
+            return Ok(Item);
+        }
+
+        [HttpGet("GetAll/{id}")]
+        public async Task<IActionResult> GetAll()
+        {
+            IEnumerable<T> Items = await Instance.GetAll();
+            return Ok(Items);
+        }
+
+        [HttpPost("AddEntry")]
+        public async Task<IActionResult> AddEntry([FromBody] T Item)
+        {
+            await Instance.AddEntry(Item);
+            return Ok(Item);
+        }
+
+        [HttpPost("AddEntries")]
+        public async Task<IActionResult> AddEntries([FromBody] T[] Items)
+        {
+            await Instance.AddEntries(Items);
+            return Ok(Items);
+        }
+
+        [HttpPut("UpdateEntry")]
+        public async Task<IActionResult> UpdateEntry([FromBody] T Item)
+        {
+            await Instance.UpdateEntry(Item);
+            return Ok(Item);
+        }
+
+        [HttpPut("UpdateEntries")]
+        public async Task<IActionResult> UpdateEntries([FromBody] T[] Items)
+        {
+            await Instance.UpdateEntries(Items);
+            return Ok(Items);
+        }
     }
 }

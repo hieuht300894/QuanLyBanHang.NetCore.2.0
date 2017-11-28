@@ -12,6 +12,7 @@ using Server.Service;
 using Server.Model;
 using Microsoft.EntityFrameworkCore;
 using Server.Utils;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Server
 {
@@ -44,10 +45,25 @@ namespace Server
             ModuleHelper.HostingEnvironment = env;
             ModuleHelper.ServiceScope= app.ApplicationServices.CreateScope();
 
-            //DBInitializer.InitData();
+            GetPrimaryKey();
 
             app.UseStaticFiles();
             app.UseMvc();
+        }
+
+        void GetPrimaryKey()
+        {
+            zModel db = new zModel();
+            ModuleHelper.ListKeys = new List<IKey>();
+            var eTypes = db.Model.GetEntityTypes();
+            foreach (var eType in eTypes)
+            {
+                var keys = eType.GetKeys();
+                foreach (var key in keys)
+                {
+                    ModuleHelper.ListKeys.Add(key);
+                }
+            }
         }
     }
 }
