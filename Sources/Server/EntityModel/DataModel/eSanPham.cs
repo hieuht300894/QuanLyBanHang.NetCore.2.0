@@ -19,8 +19,8 @@ namespace EntityModel.DataModel
 
         public string Ten { get; set; }
 
-        [NotMapped]
-        public Color Color { get; set; }
+        //[NotMapped]
+        //public Color Color { get; set; }
 
         public int ColorHex { get; set; }
 
