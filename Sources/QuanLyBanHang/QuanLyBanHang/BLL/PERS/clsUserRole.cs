@@ -19,31 +19,44 @@ namespace QuanLyBanHang.BLL.PERS
         #region Functions
         public xUserFeature GetUserFeature(string IDFeature)
         {
-            db = new aModel();
-            xUserFeature uf = new xUserFeature();
-            if (clsGeneral.curAccount.IDPermission > 0)
-                uf = db.xUserFeature.FirstOrDefault(x => x.IDPermission == clsGeneral.curAccount.IDPermission && x.IDFeature.Equals(IDFeature) && x.IsEnable);
+            //db = new aModel();
+            //xUserFeature uf = new xUserFeature();
+            //if (clsGeneral.curAccount.IDPermission > 0)
+            //    uf = db.xUserFeature.FirstOrDefault(x => x.IDPermission == clsGeneral.curAccount.IDPermission && x.IDFeature.Equals(IDFeature) && x.IsEnable);
 
-            return uf ?? new xUserFeature();
+            //return uf ?? new xUserFeature();
+
+            return new xUserFeature();
         }
 
         public List<xUserFeature> GetUserFeature(int IDPermission)
         {
-            db = new aModel();
-            IEnumerable<xUserFeature> lstTemp = db.xUserFeature.Where(x => x.IDPermission == IDPermission && x.IsEnable);
-            return lstTemp.ToList();
+            //db = new aModel();
+            //IEnumerable<xUserFeature> lstTemp = db.xUserFeature.Where(x => x.IDPermission == IDPermission && x.IsEnable);
+            //return lstTemp.ToList();
+
+            return new List<xUserFeature>();
         }
 
         public async Task<IList<xUserFeature>> SearchUserFeature(int IDPermission)
         {
+            //try
+            //{
+            //    return await Task.Factory.StartNew(() =>
+            //     {
+            //         db = new aModel();
+            //         IEnumerable<xUserFeature> lstTemp = db.xUserFeature.Where(x => x.IDPermission == IDPermission && x.IsEnable);
+            //         return lstTemp.ToList();
+            //     });
+            //}
+            //catch { return new List<xUserFeature>(); }
+
             try
             {
                 return await Task.Factory.StartNew(() =>
-                 {
-                     db = new aModel();
-                     IEnumerable<xUserFeature> lstTemp = db.xUserFeature.Where(x => x.IDPermission == IDPermission && x.IsEnable);
-                     return lstTemp.ToList();
-                 });
+                {
+                    return new List<xUserFeature>();
+                });
             }
             catch { return new List<xUserFeature>(); }
         }

@@ -37,7 +37,7 @@ namespace QuanLyBanHang.GUI.DanhMuc
         {
             lstEdited = new BindingList<eSanPham>();
             lstEntries = new BindingList<eSanPham>(await clsFunction<eSanPham>.Instance.GetAll());
-            lstEntries.ToList().ForEach(x => { x.Color = Color.FromArgb(x.ColorHex); });
+            //lstEntries.ToList().ForEach(x => { x.Color = Color.FromArgb(x.ColorHex); });
 
             await RunMethodAsync(() => { gctDanhSach.DataSource = lstEntries; });
         }
@@ -56,7 +56,7 @@ namespace QuanLyBanHang.GUI.DanhMuc
                 x.TenDonViTinh = dvt.Ten;
 
                 x.MauSac = rpclr.ColorText.ToString();
-                x.ColorHex = x.Color.ToArgb();
+                //x.ColorHex = x.Color.ToArgb();
             });
 
 

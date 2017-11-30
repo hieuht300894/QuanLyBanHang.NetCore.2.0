@@ -19,12 +19,23 @@ namespace QuanLyBanHang.BLL.ChucNang
 
         public async Task<IList<eNhapHangNhaCungCapChiTiet>> NhapHangChiTiet(int KeyID)
         {
-            try {
-                db = new aModel();
-                return await Task.Factory.StartNew(() => {
-                    IEnumerable<eNhapHangNhaCungCapChiTiet> lstTemp = db.eNhapHangNhaCungCapChiTiet.Where(x => x.IDNhapHangNhaCungCap == KeyID);
-                    IList<eNhapHangNhaCungCapChiTiet> lstResult = lstTemp.ToList();
-                    return lstResult;
+            //try
+            //{
+            //    db = new aModel();
+            //    return await Task.Factory.StartNew(() =>
+            //    {
+            //        IEnumerable<eNhapHangNhaCungCapChiTiet> lstTemp = db.eNhapHangNhaCungCapChiTiet.Where(x => x.IDNhapHangNhaCungCap == KeyID);
+            //        IList<eNhapHangNhaCungCapChiTiet> lstResult = lstTemp.ToList();
+            //        return lstResult;
+            //    });
+            //}
+            //catch { return new List<eNhapHangNhaCungCapChiTiet>(); }
+
+            try
+            {
+                return await Task.Factory.StartNew(() =>
+                {
+                    return new List<eNhapHangNhaCungCapChiTiet>();
                 });
             }
             catch { return new List<eNhapHangNhaCungCapChiTiet>(); }

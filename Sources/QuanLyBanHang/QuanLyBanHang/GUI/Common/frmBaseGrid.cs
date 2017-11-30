@@ -440,8 +440,8 @@ namespace QuanLyBanHang
             int LastRow = GetGridViewLastRow(view);
             int RowCount = ListData.Count - 1;
 
-            if (LastRow == RowCount)
-                clsFunction<T>.Instance.SelectAsync(this, view.GridControl, ListData, query, parameters);
+            //if (LastRow == RowCount)
+            //    clsFunction<T>.Instance.SelectAsync(this, view.GridControl, ListData, query, parameters);
         }
         public int GetGridViewLastRow(GridView grvMain)
         {

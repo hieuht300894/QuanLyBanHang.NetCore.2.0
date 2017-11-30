@@ -48,10 +48,10 @@ namespace QuanLyBanHang.GUI.Common
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            loadDataForm();
+            LoadDataForm();
         }
 
-        private void loadDataForm()
+        private void LoadDataForm()
         {
             ribbon.Hide();
             ribbonStatusBar.Hide();
@@ -67,35 +67,34 @@ namespace QuanLyBanHang.GUI.Common
             _sUser = clsGeneral.Decrypt(Properties.Settings.Default.UserName);
             _sPass = clsGeneral.Decrypt(Properties.Settings.Default.Password);
 
-            string _conString = "";
-            if (_wAu)
-                _conString = "data source={0};initial catalog={1};Integrated Security={2};MultipleActiveResultSets=True;App=EntityFramework";
-            else
-                _conString = "data source={0};initial catalog={1};Integrated Security={2};user id={3};password={4};MultipleActiveResultSets=True;App=EntityFramework";
-            EntityModel.Module.dbConnectString = string.Format(_conString, _sName, _sDatabase, _wAu, _sUser, _sPass);
+            //string _conString = "";
+            //if (_wAu)
+            //    _conString = "data source={0};initial catalog={1};Integrated Security={2};MultipleActiveResultSets=True;App=EntityFramework";
+            //else
+            //    _conString = "data source={0};initial catalog={1};Integrated Security={2};user id={3};password={4};MultipleActiveResultSets=True;App=EntityFramework";
+            //EntityModel.Module.dbConnectString = string.Format(_conString, _sName, _sDatabase, _wAu, _sUser, _sPass);
 
-            try
-            {
-                EntityModel.Module.InitDefaultData();
-                clsEntity.InitCollection();
-            }
-            catch (Exception ex)
-            {
-                clsGeneral.CloseWaitForm();
-                clsGeneral.showErrorException(ex, "Exception");
-                if (clsGeneral.showConfirmMessage("Thiết lập kết nối máy chủ"))
-                {
-                    frmDatabase frm = new frmDatabase();
-                    frm.ShowDialog();
-                    loadDataForm();
-                }
-                else
-                {
-                    Application.Exit();
-                }
-                return;
-            }
-            clsGeneral.CloseWaitForm();
+            //try
+            //{
+            //    //EntityModel.Module.InitDefaultData();
+            //}
+            //catch (Exception ex)
+            //{
+            //    clsGeneral.CloseWaitForm();
+            //    clsGeneral.showErrorException(ex, "Exception");
+            //    if (clsGeneral.showConfirmMessage("Thiết lập kết nối máy chủ"))
+            //    {
+            //        frmDatabase frm = new frmDatabase();
+            //        frm.ShowDialog();
+            //        loadDataForm();
+            //    }
+            //    else
+            //    {
+            //        Application.Exit();
+            //    }
+            //    return;
+            //}
+            //clsGeneral.CloseWaitForm();
             #endregion
 
             #region Thiết lập thông tin

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using EntityModel.DataModel;
-using System.Data.Entity.Migrations;
 
 namespace QuanLyBanHang
 {
@@ -68,12 +66,12 @@ namespace QuanLyBanHang
                 try
                 {
                     clsGeneral.curAccount.Password = clsGeneral.Encrypt(bteNewPassword.Text.Trim());
-                    using (aModel db = new aModel())
-                    {
-                        db.xAccount.AddOrUpdate(clsGeneral.curAccount);
-                        db.SaveChanges();
-                        this.Close();
-                    }
+                    //using (aModel db = new aModel())
+                    //{
+                    //    db.xAccount.AddOrUpdate(clsGeneral.curAccount);
+                    //    db.SaveChanges();
+                    //    this.Close();
+                    //}
                 }
                 catch (Exception ex)
                 {

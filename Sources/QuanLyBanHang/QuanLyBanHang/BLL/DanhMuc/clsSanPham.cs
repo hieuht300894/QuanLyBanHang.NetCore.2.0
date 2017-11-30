@@ -20,20 +20,29 @@ namespace QuanLyBanHang.BLL.DanhMuc
 
         public async Task<IList<eSanPham>> TimKiemSanPham(int IDNhomSanPham, string MaSanPham, string TenSanPham)
         {
+            //try
+            //{
+            //    db = new aModel();
+            //    return await Task.Factory.StartNew(() =>
+            //    {
+            //        IEnumerable<eSanPham> lstTemp = db.eSanPham.ToList();
+
+            //        if (!string.IsNullOrEmpty(MaSanPham))
+            //            lstTemp = lstTemp.Where(x => x.Ma.ToLower().Contains(MaSanPham.ToLower()));
+
+            //        if (!string.IsNullOrEmpty(TenSanPham))
+            //            lstTemp = lstTemp.Where(x => x.Ten.ToLower().Contains(TenSanPham.ToLower()));
+
+            //        return lstTemp.ToList();
+            //    });
+            //}
+            //catch { return new List<eSanPham>(); }
+
             try
             {
-                db = new aModel();
                 return await Task.Factory.StartNew(() =>
                 {
-                    IEnumerable<eSanPham> lstTemp = db.eSanPham.ToList();
-
-                    if (!string.IsNullOrEmpty(MaSanPham))
-                        lstTemp = lstTemp.Where(x => x.Ma.ToLower().Contains(MaSanPham.ToLower()));
-
-                    if (!string.IsNullOrEmpty(TenSanPham))
-                        lstTemp = lstTemp.Where(x => x.Ten.ToLower().Contains(TenSanPham.ToLower()));
-
-                    return lstTemp.ToList();
+                    return new List<eSanPham>();
                 });
             }
             catch { return new List<eSanPham>(); }
