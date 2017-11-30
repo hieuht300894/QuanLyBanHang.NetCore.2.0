@@ -1,15 +1,9 @@
 namespace EntityModel.DataModel
 {
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    [Table("xUserFeature")]
-    public partial class xUserFeature
+    public class xUserFeature
     {
-        [Key]
         public int KeyID { get; set; }
         public int IDPermission { get; set; }
-        [StringLength(255)]
         public string IDFeature { get; set; }
         public bool IsAdd { get; set; }
         public bool IsEdit { get; set; }

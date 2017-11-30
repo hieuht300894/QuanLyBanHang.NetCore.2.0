@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace EntityModel.DataModel
 {
-    [Table("eNhapHangNhaCungCap")]
+
     public class eNhapHangNhaCungCap
     {
-        [Key]
+
         public int KeyID { get; set; }
 
         public string Ma { get; set; }
 
         public string MaLoHang { get; set; }
 
-        public DateTime NgayNhap { get; set; }
+        public System.DateTime NgayNhap { get; set; }
 
         public int IDNhaCungCap { get; set; }
 
@@ -41,10 +34,5 @@ namespace EntityModel.DataModel
         public decimal TongTien { get; set; }
 
         public string GhiChu { get; set; }
-
-        [NotMapped]
-        public ICollection<eNhapHangNhaCungCapChiTiet> eNhapHangNhaCungCapChiTiet { get; set; } = new HashSet<eNhapHangNhaCungCapChiTiet>();
     }
-
-   
 }

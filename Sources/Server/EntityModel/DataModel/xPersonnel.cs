@@ -1,13 +1,7 @@
 namespace EntityModel.DataModel
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    [Table("xPersonnel")]
-    public partial class xPersonnel
+    public  class xPersonnel
     {
-        [Key]
         public int KeyID { get; set; }
         public string Code { get; set; }
         public string FullName { get; set; }
@@ -18,8 +12,8 @@ namespace EntityModel.DataModel
         public bool IsEnable { get; set; }
         public bool IsAccount { get; set; }
         public int CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public System.DateTime CreatedDate { get; set; }
         public int? ModifiedBy { get; set; }
-        public DateTime? ModifiedDate { get; set; }
+        public System.DateTime? ModifiedDate { get; set; }
     }
 }

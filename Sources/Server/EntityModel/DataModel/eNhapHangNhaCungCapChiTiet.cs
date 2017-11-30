@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace EntityModel.DataModel
 {
-    [Table("eNhapHangNhaCungCapChiTiet")]
+
     public class eNhapHangNhaCungCapChiTiet
     {
-        [Key]
+
         public int KeyID { get; set; }
 
         public int IDNhapHangNhaCungCap { get; set; }
@@ -34,7 +27,7 @@ namespace EntityModel.DataModel
 
         public string TenKho { get; set; }
 
-        public DateTime? HanSuDung { get; set; }
+        public System.DateTime? HanSuDung { get; set; }
 
         public decimal SoLuongSi { get; set; }
 
