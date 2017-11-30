@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.GUI.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //DevExpress.UserSkins.BonusSkins.Register();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(Properties.Settings.Default.SkinName);
+            //DevExpress.Utils.AppearanceObject.DefaultFont = Properties.Settings.Default.FontFormat;
+            Application.Run(new frmMain());
         }
     }
 }
