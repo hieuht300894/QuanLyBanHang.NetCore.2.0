@@ -669,15 +669,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\EntityModel\\EntityModel.csproj",
+      "projectUniqueName": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\EntityModel\\EntityModel.csproj",
       "projectName": "EntityModel",
-      "projectPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\EntityModel\\EntityModel.csproj",
+      "projectPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\EntityModel\\EntityModel.csproj",
       "packagesPath": "C:\\Users\\Gokatta\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\EntityModel\\obj\\",
+      "outputPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\EntityModel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

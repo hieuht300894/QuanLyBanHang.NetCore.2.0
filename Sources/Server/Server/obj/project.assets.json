@@ -12548,11 +12548,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\Server\\Server.csproj",
+      "projectUniqueName": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\Server\\Server.csproj",
+      "projectPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\Gokatta\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\Server\\obj\\",
+      "outputPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12571,8 +12571,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\EntityModel\\EntityModel.csproj": {
-              "projectPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\trunk\\Sources\\Server\\EntityModel\\EntityModel.csproj"
+            "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\EntityModel\\EntityModel.csproj": {
+              "projectPath": "E:\\Projects\\QuanLyBanHang.NetCore.2.0\\Sources\\Server\\EntityModel\\EntityModel.csproj"
             }
           }
         }

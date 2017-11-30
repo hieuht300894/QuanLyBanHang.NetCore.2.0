@@ -1,11 +1,17 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using EntityModel.DataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Client.Module
 {
@@ -179,23 +185,13 @@ namespace Client.Module
         #endregion
 
         #region Hiện thị thông báo
-        static GUI.Common.frmMessage _frmMessage;
-        static GUI.Common.frmConfirm _frmConfirm;
-        static GUI.Common.frmError _frmError;
-
         /// <summary>
         /// Dùng để thông báo đến người dùng
         /// </summary>
         /// <param name="_message"></param>
-        public static void showMessage(string _message)
+        public static void showMessage(string Caption, string Title = "Thông báo")
         {
-            if (_frmMessage == null)
-                _frmMessage = new GUI.Common.frmMessage();
-            if (!_frmMessage.IsHandleCreated)
-            {
-                _frmMessage.lblMessage.Text = _message;
-                _frmMessage.ShowDialog();
-            }
+            XtraMessageBox.Show(Caption, Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -203,32 +199,25 @@ namespace Client.Module
         /// </summary>
         /// <param name="_message"></param>
         /// <returns></returns>
-        public static bool showConfirmMessage(string _message)
+        public static bool showConfirmMessage(string Caption, string Title = "Thông báo")
         {
-            if (_frmConfirm == null)
-                _frmConfirm = new GUI.Common.frmConfirm();
-            if (!_frmConfirm.IsHandleCreated)
-            {
-                _frmConfirm.lblMessage.Text = _message;
-                if (_frmConfirm.ShowDialog() != System.Windows.Forms.DialogResult.OK)
-                    return false;
-            }
-            return true;
+            return XtraMessageBox.Show(Caption, Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes;
         }
+
         /// <summary>
         /// Dùng để hiển thị Exception
         /// </summary>
         /// <param name="_ex"></param>
         /// <param name="_message"></param>
-        public static void showErrorException(Exception _ex, string _message = "Thông báo")
+        public static void showErrorException(Exception _ex, string Title = "Thông báo")
         {
-            if (_frmError == null) _frmError = new GUI.Common.frmError();
-            if (!_frmError.IsHandleCreated)
-            {
-                _frmError.lblMessage.Text = _message;
-                _frmError.meError.Text = _ex.ToString();
-                _frmError.ShowDialog();
-            }
+            //if (_frmError == null) _frmError = new GUI.Common.frmError();
+            //if (!_frmError.IsHandleCreated)
+            //{
+            //    _frmError.lblMessage.Text = _message;
+            //    _frmError.meError.Text = _ex.ToString();
+            //    _frmError.ShowDialog();
+            //}
         }
         #endregion
 
