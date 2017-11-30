@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Client.GUI.Common;
+using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Client.GUI.DanhMuc
 {
-    public partial class frmTinhThanh : Form
+    public partial class frmTinhThanh : frmBase
     {
         public frmTinhThanh()
         {

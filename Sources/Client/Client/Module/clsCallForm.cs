@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using Client.GUI.Common;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,34 +11,44 @@ namespace Client.Module
     public class clsCallForm
     {
         public static List<FormItem> fList = null;
-        public async static void InitFormCollection()
+        public static void InitFormCollection()
         {
             fList = new List<FormItem>();
             try
             {
-                await Task.Factory.StartNew(() => { });
-
                 System.Reflection.Assembly projectA = System.Reflection.Assembly.GetExecutingAssembly();
                 foreach (Type t in projectA.GetTypes())
                 {
+                    if (t.BaseType == typeof(frmBase))
+                    {
+                        var emptyCtor = t.GetConstructor(Type.EmptyTypes);
+                        if (emptyCtor != null)
+                        {
+                            var f = (frmBase)emptyCtor.Invoke(new object[] { });
+                            fList.Add(new FormItem(f, f.Name));
+                        }
+                    }
                     if (t.BaseType == typeof(XtraForm))
                     {
                         var emptyCtor = t.GetConstructor(Type.EmptyTypes);
                         if (emptyCtor != null)
                         {
                             var f = (XtraForm)emptyCtor.Invoke(new object[] { });
-                            fList.Add(new FormItem(f.Name, f));
+                            fList.Add(new FormItem(f, f.Name));
                         }
                     }
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                clsGeneral.showErrorException(ex, "Exception");
+            }
         }
         public static XtraForm CreateNewForm(string bbiName)
         {
             if (fList == null)
                 return null;
-            try { return fList.Find(f => f.BbiName.Equals(bbiName)).CForm; }
+            try { return fList.Find(f => f.BbiName.Equals(bbiName)).xForm; }
             catch { return null; }
 
         }
@@ -45,32 +56,32 @@ namespace Client.Module
 
     public class FormItem
     {
+        XtraForm _frmMain;
         string _bbiName;
-        public string BbiName
-        {
-            get { return _bbiName; }
-            set { _bbiName = value; }
-        }
-        XtraForm _cForm;
-        Type _fType;
 
-        public FormItem(string bbiName, XtraForm frmIn)
+        public FormItem(XtraForm _frmMain, string _bbiName)
         {
-            this._bbiName = bbiName;
-            this._cForm = frmIn;
-            this._fType = frmIn.GetType();
+            this._frmMain = _frmMain;
+            this._bbiName = _bbiName;
         }
-        public XtraForm CForm
+
+        public string BbiName { get { return _bbiName; } }
+
+        public XtraForm xForm
         {
             get
             {
-                if (_cForm == null || !_cForm.IsHandleCreated)
+                XtraForm frm = _frmMain;
+                try
                 {
-                    _cForm = (XtraForm)Activator.CreateInstance(_fType);
+
+                    if (_frmMain == null || !_frmMain.IsHandleCreated)
+                        frm = (XtraForm)Activator.CreateInstance(_frmMain.GetType());
+                    return frm;
                 }
-                return _cForm;
+                catch { return null; }
+
             }
-            set { _cForm = value; }
         }
     }
 }

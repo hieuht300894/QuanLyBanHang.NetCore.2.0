@@ -42,45 +42,57 @@ namespace Client.GUI.Common
         #region Methods
         private void BarItemVisibility()
         {
-            btnAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnSaveAndAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnCancel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnExportExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnSaveAndAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnCancel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnExportExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
 
-            foreach (eFormType _fType in fTypes)
-            {
-                if (_fType == eFormType.Default)
-                {
-                    btnAdd.Visibility = clsGeneral.curUserFeature.IsAdd ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
-                    btnEdit.Visibility = clsGeneral.curUserFeature.IsEdit ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
-                    btnDelete.Visibility = clsGeneral.curUserFeature.IsDelete ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
-                    btnRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-                if (_fType == eFormType.Add || _fType == eFormType.Edit)
-                {
-                    if (_fType == eFormType.Edit && clsGeneral.curUserFeature.IsEdit && clsGeneral.curUserFeature.IsSave)
-                    {
-                        btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnSaveAndAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    }
-                    if (_fType == eFormType.Add && clsGeneral.curUserFeature.IsAdd && clsGeneral.curUserFeature.IsSave)
-                    {
-                        btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnSaveAndAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    }
-                    btnCancel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-                if (_fType == eFormType.Print)
-                {
-                    btnPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    btnExportExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-            }
+            btnAdd.Visibility = clsGeneral.curUserFeature.IsAdd ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
+
+            //btnAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnSaveAndAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnCancel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //btnExportExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+            //foreach (eFormType _fType in fTypes)
+            //{
+            //    if (_fType == eFormType.Default)
+            //    {
+            //        btnAdd.Visibility = clsGeneral.curUserFeature.IsAdd ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
+            //        btnEdit.Visibility = clsGeneral.curUserFeature.IsEdit ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
+            //        btnDelete.Visibility = clsGeneral.curUserFeature.IsDelete ? DevExpress.XtraBars.BarItemVisibility.Always : DevExpress.XtraBars.BarItemVisibility.Never;
+            //        btnRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //    }
+            //    if (_fType == eFormType.Add || _fType == eFormType.Edit)
+            //    {
+            //        if (_fType == eFormType.Edit && clsGeneral.curUserFeature.IsEdit && clsGeneral.curUserFeature.IsSave)
+            //        {
+            //            btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //            btnSaveAndAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        }
+            //        if (_fType == eFormType.Add && clsGeneral.curUserFeature.IsAdd && clsGeneral.curUserFeature.IsSave)
+            //        {
+            //            btnSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //            btnSaveAndAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        }
+            //        btnCancel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //    }
+            //    if (_fType == eFormType.Print)
+            //    {
+            //        btnPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        btnExportExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //    }
+            //}
         }
         private void LoadAccessForm()
         {

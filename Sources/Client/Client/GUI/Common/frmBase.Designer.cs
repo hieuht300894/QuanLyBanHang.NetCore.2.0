@@ -188,7 +188,7 @@
             this.btnSaveAndAdd.Caption = "Lưu và thêm mới";
             this.btnSaveAndAdd.Id = 9;
             this.btnSaveAndAdd.ImageOptions.Image = global::Client.Properties.Resources.SaveAndNew_16x16;
-            this.btnSaveAndAdd.ItemShortcut = new DevExpress.XtraBars.BarShortcut(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.btnSaveAndAdd.ItemShortcut = new DevExpress.XtraBars.BarShortcut(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
                 | System.Windows.Forms.Keys.S));
             this.btnSaveAndAdd.Name = "btnSaveAndAdd";
             // 
@@ -222,7 +222,7 @@
             this.btnExportExcel.Caption = "Xuất Excel";
             this.btnExportExcel.Id = 19;
             this.btnExportExcel.ImageOptions.Image = global::Client.Properties.Resources.ExportToXLSX_16x16;
-            this.btnExportExcel.ItemShortcut = new DevExpress.XtraBars.BarShortcut(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.btnExportExcel.ItemShortcut = new DevExpress.XtraBars.BarShortcut(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
                 | System.Windows.Forms.Keys.E));
             this.btnExportExcel.Name = "btnExportExcel";
             // 
@@ -284,7 +284,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barMenu;
-            this.barDockControlTop.Size = new System.Drawing.Size(884, 26);
+            this.barDockControlTop.Size = new System.Drawing.Size(884, 24);
             // 
             // barDockControlBottom
             // 
@@ -298,17 +298,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barMenu;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 358);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 360);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(884, 26);
+            this.barDockControlRight.Location = new System.Drawing.Point(884, 24);
             this.barDockControlRight.Manager = this.barMenu;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 358);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 360);
             // 
             // btnClose
             // 

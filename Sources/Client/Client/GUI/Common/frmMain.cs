@@ -35,6 +35,7 @@ namespace Client.GUI.Common
         #region Method
         private void LoadDataForm()
         {
+            clsCallForm.InitFormCollection();
             AddItemClick();
         }
         private async void AddDocument(XtraForm _xtrForm)
@@ -68,13 +69,14 @@ namespace Client.GUI.Common
                 {
                     foreach (RibbonPageGroup group in page.Groups)
                     {
-                        foreach (RibbonPageGroupItemLink item in group.ItemLinks)
+                        foreach (var item in group.ItemLinks)
                         {
                             if (item is BarButtonItemLink)
                             {
                                 BarButtonItemLink bbi = item as BarButtonItemLink;
                                 if (bbi.Item.Name.StartsWith("frm"))
                                 {
+                                    bbi.Item.ItemClick -= bbi_ItemClick;
                                     bbi.Item.ItemClick += bbi_ItemClick;
                                 }
                             }
@@ -102,8 +104,5 @@ namespace Client.GUI.Common
             catch { }
         }
         #endregion
-
-
-
     }
 }
