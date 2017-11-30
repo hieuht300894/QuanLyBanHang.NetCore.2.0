@@ -1,0 +1,9 @@
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\obj\Debug\EntityModel.csproj.CoreCompileInputs.cache
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\bin\Debug\EntityModel.dll
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\bin\Debug\EntityModel.pdb
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\bin\Debug\System.ComponentModel.Annotations.dll
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\bin\Debug\netstandard.dll
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\bin\Debug\System.ComponentModel.Annotations.xml
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\obj\Debug\EntityModel.dll
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\obj\Debug\EntityModel.pdb
+E:\Projects\QuanLyBanHang.NetCore.2.0\trunk\Sources\Server\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
