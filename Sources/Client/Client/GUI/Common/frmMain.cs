@@ -35,27 +35,25 @@ namespace Client.GUI.Common
         #region Method
         private void LoadDataForm()
         {
+            clsGeneral.CallWaitForm(this);
+
             clsCallForm.InitFormCollection();
             AddItemClick();
+
+            clsGeneral.CloseWaitForm();
         }
-        private async void AddDocument(XtraForm _xtrForm)
+        private void AddDocument(XtraForm _xtrForm)
         {
-            clsGeneral.CallWaitForm(_xtrForm);
-            await Task.Factory.StartNew(() =>
+            clsGeneral.CallWaitForm(this);
+            BaseDocument document = docManager.GetDocument(_xtrForm);
+            if (document != null)
+                tbvMain.Controller.Activate(document);
+            else
             {
-                Invoke(new Action(() =>
-                {
-                    BaseDocument document = docManager.GetDocument(_xtrForm);
-                    if (document != null)
-                        tbvMain.Controller.Activate(document);
-                    else
-                    {
-                        _xtrForm.Text = _xtrForm.Text;
-                        _xtrForm.MdiParent = this;
-                        _xtrForm.Show();
-                    }
-                }));
-            });
+                _xtrForm.Text = _xtrForm.Text;
+                _xtrForm.MdiParent = this;
+                _xtrForm.Show();
+            }
             clsGeneral.CloseWaitForm();
         }
         private async void AddItemClick()
@@ -97,9 +95,9 @@ namespace Client.GUI.Common
         {
             try
             {
-                XtraForm frm = clsCallForm.CreateNewForm(e.Item.Name);
-                if (frm != null)
-                    AddDocument(frm);
+                FormItem fi = clsCallForm.CreateNewForm(e.Item.Name);
+                if (fi != null)
+                    AddDocument(fi.xForm);
             }
             catch { }
         }

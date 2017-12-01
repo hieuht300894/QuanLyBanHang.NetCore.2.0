@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9482606C-E651-4BA0-A56A-A715AA81B5D5}</ProjectGuid>
@@ -99,6 +100,9 @@
     <EmbeddedResource Include="GUI\Common\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Common\frmWaiting.resx">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,7 +114,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="bin\Debug\Client.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -5287,92 +5290,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ZoomOut_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\Client.exe" />
-    <Content Include="bin\Debug\Client.pdb" />
-    <Content Include="bin\Debug\DevExpress.Data.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.Data.v16.2.xml" />
-    <Content Include="bin\Debug\DevExpress.Office.v16.2.Core.dll" />
-    <Content Include="bin\Debug\DevExpress.Office.v16.2.Core.xml" />
-    <Content Include="bin\Debug\DevExpress.Pdf.v16.2.Core.dll" />
-    <Content Include="bin\Debug\DevExpress.Pdf.v16.2.Core.xml" />
-    <Content Include="bin\Debug\DevExpress.Printing.v16.2.Core.dll" />
-    <Content Include="bin\Debug\DevExpress.Printing.v16.2.Core.xml" />
-    <Content Include="bin\Debug\DevExpress.RichEdit.v16.2.Core.dll" />
-    <Content Include="bin\Debug\DevExpress.RichEdit.v16.2.Core.xml" />
-    <Content Include="bin\Debug\DevExpress.Sparkline.v16.2.Core.dll" />
-    <Content Include="bin\Debug\DevExpress.Sparkline.v16.2.Core.xml" />
-    <Content Include="bin\Debug\DevExpress.Utils.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.Utils.v16.2.xml" />
-    <Content Include="bin\Debug\DevExpress.XtraBars.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.XtraBars.v16.2.xml" />
-    <Content Include="bin\Debug\DevExpress.XtraEditors.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.XtraEditors.v16.2.xml" />
-    <Content Include="bin\Debug\DevExpress.XtraGrid.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.XtraGrid.v16.2.xml" />
-    <Content Include="bin\Debug\DevExpress.XtraLayout.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.XtraLayout.v16.2.xml" />
-    <Content Include="bin\Debug\DevExpress.XtraPrinting.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.XtraPrinting.v16.2.xml" />
-    <Content Include="bin\Debug\DevExpress.XtraTreeList.v16.2.dll" />
-    <Content Include="bin\Debug\DevExpress.XtraTreeList.v16.2.xml" />
-    <Content Include="bin\Debug\de\DevExpress.Data.v16.2.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.Office.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.Pdf.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.Printing.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.RichEdit.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.Sparkline.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.Utils.v16.2.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.XtraEditors.v16.2.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.XtraGrid.v16.2.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.XtraLayout.v16.2.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.XtraPrinting.v16.2.resources.dll" />
-    <Content Include="bin\Debug\de\DevExpress.XtraTreeList.v16.2.resources.dll" />
-    <Content Include="bin\Debug\EntityModel.dll" />
-    <Content Include="bin\Debug\EntityModel.pdb" />
-    <Content Include="bin\Debug\es\DevExpress.Data.v16.2.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.Pdf.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.Printing.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.RichEdit.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.Sparkline.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.Utils.v16.2.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.XtraEditors.v16.2.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.XtraGrid.v16.2.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.XtraLayout.v16.2.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.XtraPrinting.v16.2.resources.dll" />
-    <Content Include="bin\Debug\es\DevExpress.XtraTreeList.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.Data.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.Pdf.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.Printing.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.RichEdit.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.Utils.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.XtraEditors.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.XtraGrid.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.XtraLayout.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.XtraPrinting.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ja\DevExpress.XtraTreeList.v16.2.resources.dll" />
-    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
-    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
-    <Content Include="bin\Debug\ru\DevExpress.Data.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.Pdf.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.Printing.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.RichEdit.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.Utils.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.XtraEditors.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.XtraGrid.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.XtraLayout.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.XtraPrinting.v16.2.resources.dll" />
-    <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v16.2.resources.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,13 +1,6 @@
-﻿using DevExpress.XtraWaitForm;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraWaitForm;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Client.GUI.Common
 {
@@ -26,10 +19,10 @@ namespace Client.GUI.Common
             base.SetCaption(caption);
             this.progressPanel1.Caption = caption;
         }
-        public override void SetDescription(string description)
+        public override void SetDescription(string DienGiai)
         {
-            base.SetDescription(description);
-            this.progressPanel1.Description = description;
+            base.SetDescription(DienGiai);
+            this.progressPanel1.Description = DienGiai;
         }
         public override void ProcessCommand(Enum cmd, object arg)
         {
@@ -37,5 +30,9 @@ namespace Client.GUI.Common
         }
 
         #endregion
+
+        public enum WaitFormCommand
+        {
+        }
     }
 }

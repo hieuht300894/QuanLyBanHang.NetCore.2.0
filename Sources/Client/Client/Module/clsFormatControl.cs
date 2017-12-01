@@ -13,7 +13,6 @@ using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Columns;
 using DevExpress.XtraTreeList.Nodes;
-using EntityModel.DataModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -509,73 +508,73 @@ namespace Client.Module
 
         public static void SaveLayout(this GridView grvMain, XtraForm frmMain)
         {
-            if (string.IsNullOrEmpty(frmMain.Name)) return;
-            try
-            {
-                string dir = @"Layout\GridLayout";
-                if (!Directory.Exists(dir))
-                    Directory.CreateDirectory(dir);
+            //if (string.IsNullOrEmpty(frmMain.Name)) return;
+            //try
+            //{
+            //    string dir = @"Layout\GridLayout";
+            //    if (!Directory.Exists(dir))
+            //        Directory.CreateDirectory(dir);
 
-                string path = dir + @"\" + frmMain + "_" + grvMain.Name + ".xml";
-                if (!File.Exists(path))
-                    File.Create(path).Close();
+            //    string path = dir + @"\" + frmMain + "_" + grvMain.Name + ".xml";
+            //    if (!File.Exists(path))
+            //        File.Create(path).Close();
 
-                List<xDisplay> lstDisplays = new List<xDisplay>();
-                foreach (GridColumn col in grvMain.Columns)
-                {
-                    xDisplay dis = new xDisplay();
-                    dis.ParentName = frmMain.Name;
-                    dis.Group = string.Empty;
-                    dis.Showing = col.Visible;
-                    dis.ColumnName = col.Name;
-                    dis.FieldName = col.FieldName;
-                    dis.EnableEdit = col.OptionsColumn.AllowEdit;
-                    dis.VisibleIndex = col.VisibleIndex;
-                    dis.Caption = col.Caption;
-                    lstDisplays.Add(dis);
-                }
+            //    List<xDisplay> lstDisplays = new List<xDisplay>();
+            //    foreach (GridColumn col in grvMain.Columns)
+            //    {
+            //        xDisplay dis = new xDisplay();
+            //        dis.ParentName = frmMain.Name;
+            //        dis.Group = string.Empty;
+            //        dis.Showing = col.Visible;
+            //        dis.ColumnName = col.Name;
+            //        dis.FieldName = col.FieldName;
+            //        dis.EnableEdit = col.OptionsColumn.AllowEdit;
+            //        dis.VisibleIndex = col.VisibleIndex;
+            //        dis.Caption = col.Caption;
+            //        lstDisplays.Add(dis);
+            //    }
 
-                StreamWriter sw = new StreamWriter(path);
-                sw.Write(lstDisplays.SerializeXML());
-                sw.Close();
-            }
-            catch { }
+            //    StreamWriter sw = new StreamWriter(path);
+            //    sw.Write(lstDisplays.SerializeXML());
+            //    sw.Close();
+            //}
+            //catch { }
         }
 
         static void RestoreLayout(this GridView grvMain, XtraForm frmMain)
         {
-            if (frmMain == null) return;
-            if (string.IsNullOrEmpty(frmMain.Name)) return;
-            try
-            {
-                string dir = @"Layout\GridLayout";
-                string path = dir + @"\" + frmMain.Name + "_" + grvMain.Name + ".xml";
-                if (File.Exists(path))
-                {
-                    using (StreamReader sr = new StreamReader(path))
-                    {
-                        grvMain.BeginUpdate();
-                        List<xDisplay> lstDisplays = sr.ReadToEnd().DeserializeXML<xDisplay>().OrderByDescending(x => x.VisibleIndex).ToList();
+            //if (frmMain == null) return;
+            //if (string.IsNullOrEmpty(frmMain.Name)) return;
+            //try
+            //{
+            //    string dir = @"Layout\GridLayout";
+            //    string path = dir + @"\" + frmMain.Name + "_" + grvMain.Name + ".xml";
+            //    if (File.Exists(path))
+            //    {
+            //        using (StreamReader sr = new StreamReader(path))
+            //        {
+            //            grvMain.BeginUpdate();
+            //            List<xDisplay> lstDisplays = sr.ReadToEnd().DeserializeXML<xDisplay>().OrderByDescending(x => x.VisibleIndex).ToList();
 
-                        foreach (GridColumn col in grvMain.Columns)
-                        {
-                            xDisplay dis = lstDisplays.Find(x => x.ColumnName.Equals(col.Name)) ?? new xDisplay() { Showing = false };
-                            col.Visible = dis.Showing;
-                        }
+            //            foreach (GridColumn col in grvMain.Columns)
+            //            {
+            //                xDisplay dis = lstDisplays.Find(x => x.ColumnName.Equals(col.Name)) ?? new xDisplay() { Showing = false };
+            //                col.Visible = dis.Showing;
+            //            }
 
-                        List<xDisplay> lstVisibles = lstDisplays.Where(x => x.VisibleIndex >= 0).OrderBy(x => x.VisibleIndex).ToList();
+            //            List<xDisplay> lstVisibles = lstDisplays.Where(x => x.VisibleIndex >= 0).OrderBy(x => x.VisibleIndex).ToList();
 
-                        foreach (xDisplay dis in lstVisibles)
-                        {
-                            GridColumn col = grvMain.Columns.FirstOrDefault(x => x.Name.Equals(dis.ColumnName));
-                            col.VisibleIndex = dis.VisibleIndex;
-                        }
+            //            foreach (xDisplay dis in lstVisibles)
+            //            {
+            //                GridColumn col = grvMain.Columns.FirstOrDefault(x => x.Name.Equals(dis.ColumnName));
+            //                col.VisibleIndex = dis.VisibleIndex;
+            //            }
 
-                        grvMain.EndUpdate();
-                    }
-                }
-            }
-            catch { }
+            //            grvMain.EndUpdate();
+            //        }
+            //    }
+            //}
+            //catch { }
         }
 
         public static void ShowFooter(this GridView grvMain)

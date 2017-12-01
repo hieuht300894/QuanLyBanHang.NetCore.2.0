@@ -1,15 +1,12 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
-using EntityModel.DataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
@@ -19,10 +16,10 @@ namespace Client.Module
     public static class clsGeneral
     {
         #region User
-        public static xPersonnel curPersonnel = new xPersonnel();
-        public static xAgency curAgency = new xAgency();
-        public static xAccount curAccount = new xAccount();
-        public static xUserFeature curUserFeature = new xUserFeature();
+        //public static xPersonnel curPersonnel = new xPersonnel();
+        //public static xAgency curAgency = new xAgency();
+        //public static xAccount curAccount = new xAccount();
+        //public static xUserFeature curUserFeature = new xUserFeature();
         #endregion
 
         #region Mã hóa và giải mã
@@ -391,7 +388,6 @@ namespace Client.Module
             }
             catch { }
         }
-
         public static void CallWaitForm(XtraForm frmParent)
         {
             try
@@ -405,7 +401,6 @@ namespace Client.Module
             }
             catch { }
         }
-
         public static void CloseWaitForm()
         {
             try
